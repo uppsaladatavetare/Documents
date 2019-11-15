@@ -1,7 +1,7 @@
 compile_pdf:
   stage: build
   image: timnn/texlive  # use a Docker image for LaTeX from https://hub.docker.com/
-  script: ./ghostscriptbuild.sh  # build the pdf just as you would on your computer
+  script: latexmk -pdf main.tex  # build the pdf just as you would on your computer
   artifacts:
     paths: 
       - document_flat.pdf  # instruct GitLab to keep the main.pdf file
