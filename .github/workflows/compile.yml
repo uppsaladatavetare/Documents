@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Set up a Git repository
+        uses: actions/checkout@v2
+          
+      # Comiles the two tex-files into pdfs
+      - name: Github Action for LaTeX
+        uses: xu-cheng/latex-action@v2
+        with: 
+          root_file: |
+            UD-stadgar.tex
+            UD-reglemente.tex
+          post_compile:
+            "./postscript.sh"
+      
+      # Adds the two resulting pdfs to a commit, then pushes that
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v5.1.0
+        with:
+          add: "docs/UD-stadgar.pdf docs/UD-reglemente.pdf --force"
+          author_name: Uppsala Datavetare
+          author_email: dv-ordf@utn.se
+          message: "Automatically generated"
+          tag: "v${{ github.run_number }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
