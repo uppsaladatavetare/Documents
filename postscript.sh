@@ -15,5 +15,3 @@ gs -dSAFER -dBATCH -dNOPAUSE -dNOCACHE -sDEVICE=pdfwrite \
 -dDownsampleGrayImages=true \
 -dDownsampleColorImages=true \
 -sOutputFile=docs/UD-stadgar.pdf UD-stadgar.pdf
-
-latexmk -c
