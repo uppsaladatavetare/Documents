@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Automatically Compile
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -18,11 +18,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Set up a Git repository
+      - name: Set up the git repository
         uses: actions/checkout@v2
           
       # Comiles the two tex-files into pdfs
-      - name: Github Action for LaTeX
+      - name: Compile the LaTeX documents
         uses: xu-cheng/latex-action@v2
         with: 
           root_file: |
@@ -32,7 +32,7 @@ jobs:
             "./postscript.sh"
       
       # Adds the two resulting pdfs to a commit, then pushes that
-      - name: Add & Commit
+      - name: Commit and tag the documents
         uses: EndBug/add-and-commit@v5.1.0
         with:
           add: "docs/UD-stadgar.pdf docs/UD-reglemente.pdf --force"
