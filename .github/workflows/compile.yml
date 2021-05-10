@@ -21,13 +21,14 @@ jobs:
       - name: Set up the git repository
         uses: actions/checkout@v2
           
-      # Comiles the two tex-files into pdfs
+      # Comiles the three tex-files into pdfs
       - name: Compile the LaTeX documents
         uses: xu-cheng/latex-action@v2
         with: 
           root_file: |
             UD-stadgar.tex
             UD-reglemente.tex
+            UD-gdpr.tex
           post_compile:
             "./postscript.sh"
       
@@ -35,7 +36,7 @@ jobs:
       - name: Commit and tag the documents
         uses: EndBug/add-and-commit@v5.1.0
         with:
-          add: "docs/UD-stadgar.pdf docs/UD-reglemente.pdf --force"
+          add: "docs/UD-stadgar.pdf docs/UD-reglemente.pdf docs/UD-gdpr.pdf --force"
           author_name: Uppsala Datavetare
           author_email: dv-ordf@utn.se
           message: "Automatically generated"
