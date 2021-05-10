@@ -10,7 +10,7 @@ gs -dSAFER -dBATCH -dNOPAUSE -dNOCACHE -sDEVICE=pdfwrite \
 
 gs -dSAFER -dBATCH -dNOPAUSE -dNOCACHE -sDEVICE=pdfwrite \
 -dAutoFilterColorImages=true \
- -dAutoFilterGrayImages=true \
+-dAutoFilterGrayImages=true \
 -dDownsampleMonoImages=true \
 -dDownsampleGrayImages=true \
 -dDownsampleColorImages=true \
