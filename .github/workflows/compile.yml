@@ -29,6 +29,8 @@ jobs:
             UD-stadgar.tex
             UD-reglemente.tex
             UD-gdpr.tex
+          args:
+            "-pdf -interaction=nonstopmode -force"
           post_compile:
             "./postscript.sh"
 
