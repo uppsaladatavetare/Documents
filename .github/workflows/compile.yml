@@ -23,10 +23,19 @@ jobs:
           
       # Comiles the three tex-files into pdfs
       - name: Compile the LaTeX documents
-        run: |
-             ./build.sh UD-stadgar
-             ./build.sh UD-reglemente
-             ./build.sh UD-gdpr
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            UD-stadgar.tex
+            UD-reglemente.tex
+            UD-gdpr.tex
+          post_compile:
+            "./postscript.sh"
+
+#        run: |
+#             ./build.sh UD-stadgar
+#             ./build.sh UD-reglemente
+#             ./build.sh UD-gdpr
 
       - name: Create Release
         id: create_release
