@@ -9,8 +9,8 @@ cp $1.tex temp.tex
 # one called temp.pdf which is an intermittent step
 # and one called the same as the input file, which is the first parameter
 # protip: bookmark ~/path/workspace/temp.pdf for easy viewing while working
-latexmk -pdf temp.tex && \
-\
+latexmk -f -interaction=nonstopmode -pdf temp.tex
+
 gs -dSAFER -dBATCH -dNOPAUSE -dNOCACHE -sDEVICE=pdfwrite \
 -dAutoFilterColorImages=true \
 -dAutoFilterGrayImages=true \
