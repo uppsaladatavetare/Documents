@@ -30,7 +30,7 @@ jobs:
             UD-reglemente.tex
             UD-gdpr.tex
           args:
-            "-pdf -interaction=nonstopmode -force"
+            "-pdf -interaction=nonstopmode -f"
           post_compile:
             "./postscript.sh"
 
