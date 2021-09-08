@@ -1,6 +1,3 @@
-
-mkdir docs
-
 # Make rule a phony by removing old .pdf
 rm -f temp.pdf
 
