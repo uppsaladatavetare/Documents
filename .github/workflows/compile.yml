@@ -32,6 +32,7 @@ jobs:
           args:
             "-pdf -interaction=nonstopmode -f"
           post_compile:
+            "mkdir docs"
             "./postscript.sh"
 
 #        run: |
