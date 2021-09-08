@@ -1,3 +1,6 @@
+mkdir -p docs
+mv *.pdf docs
+
 # Fixes some graphical bugs with the transparent logo.
 
 gs -dSAFER -dBATCH -dNOPAUSE -dNOCACHE -sDEVICE=pdfwrite \
