@@ -29,34 +29,7 @@ jobs:
             UD-stadgar.tex
             UD-reglemente.tex
             UD-gdpr.tex
-          post_compile:
-            "./postscript.sh"
-
-#        run: |
-#             ./build.sh UD-stadgar
-#             ./build.sh UD-reglemente
-#             ./build.sh UD-gdpr
-
-#      - name: Create Release
-#        id: create_release
-#        uses: actions/create-release@v1
-#        env:
-#            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#            tag_name: ${{ github.ref }}
-#            release_name: Release ${{ github.ref }}
-#            draft: false
-#            prerelease: false
-#
-#      - name: Release
-#        uses: softprops/action-gh-release@v1
-#        with:
-#          files: |
-#            UD-stadgar.pdf
-#            UD-reglemente.pdf
-#            UD-gdpr.pdf
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=docs
 
       # Adds the two resulting pdfs to a commit, then pushes that
       - name: Commit and tag the documents
