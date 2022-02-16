@@ -1,8 +1,7 @@
-data Square = undefined
-data Checkers = undefined
-type Board = [Square, Checkers]
+data Square = Char Int
+data Checkers = String
+type Board = [(Int, Char)]
 type Move = (Square, Square)
-
 
 
 moveChecker = undefined
