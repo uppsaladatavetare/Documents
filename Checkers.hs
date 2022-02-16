@@ -1,10 +1,11 @@
-data Square = undefined
-data Checkers = undefined
+data Square = Int
+data Checkers = Stuff
 type Board = [Square, Checkers]
 type Move = (Square, Square)
 
 --test
 --test2
+-- hej hej
 --test3
 --test4
 --test5
