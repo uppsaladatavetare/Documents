@@ -9,6 +9,7 @@ type Move = (Square, Square)
 --test3
 --test4
 --test5
+--hej
 
 moveChecker = undefined
 
