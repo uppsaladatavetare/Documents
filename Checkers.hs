@@ -6,6 +6,7 @@ type Move = (Square, Square)
 --test
 --test2
 --test3
+--test4
 
 moveChecker = undefined
 
